@@ -68,7 +68,7 @@ public class Principal {
 
 ### Notas 
 ```
-Concatenação é a prática de sequenciarPalavrasCapitalizadas juntas sem
+camelCase é a prática de sequenciarPalavrasCapitalizadas juntas sem
 espaços. Letras minúsculas concatenadas não capitalizam a palavra principal.
 ```
 ```
