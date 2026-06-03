@@ -256,19 +256,106 @@ public Student(int x, String n, String s, double g) {
 } // fim do construtor
 ```
 
+## Tipos de dados
+
+Os tipos de dados definem o tipo de dado que uma variável irá armazenar, devendo ser declarado ou inferido e o programa não irá funcionar se o tipo de dado errado foir declarado.
+
+> Tipos de dados incorretos em expressões ou dados são marcados como erros no tempo de compilação.
+
+O java tem oito tipos de dados primitivos.
+
+<table>
+    <tr>
+        <th>Tipo de dado</th> 
+        <th>Descrição do dado</th>
+    </tr>
+    <tr>
+        <td>boolean</td>
+        <td>Armazena se um dado é verdadeiro ou falso.</td>
+    </tr>
+    <tr>
+        <td>byte</td>
+        <td>Armazena inteiros de -128 a 127.</td>
+    </tr>
+    <tr>
+        <td>char</td>
+        <td>Armazena um caractere Unicode de 16 bits de 0 a 65.535</td>
+    </tr>
+    <tr>
+        <td>short</td>
+        <td>Armazena inteiros de -32.768 a 32.767.</td>
+    </tr>
+    <tr>
+        <td>int</td>
+        <td>Armazena inteiros de: -2.147.483.648 a 2.147.483.647</td>
+    </tr>
+    <tr>
+        <td>long</td>
+        <td>Armazena inteiros de: -9.223.372.036.854.775.808 a 9.223.372.036.854.775.807</td>
+    </tr>
+    <tr>
+        <td>float</td>
+        <td>Armazena um número decimal positivo ounegativo de: 1.4023x10-45 a 3.4028x10+38</td>
+    </tr>
+    <tr>
+        <td>double</td>
+        <td>Armazena um número decimal positivo ou negativo de: 4.9406x10-324 a 1.7977x10+308</td>
+    </tr>
+
+</table>
+
+### Declaração de variaveis
+
+Um literal deve ser designado para representar a variavel; 
+
+Um literal pode ser qualquer número, texto ou outra informação que represente um valor.
+
+#### Extrutura
+
+**Tipo** Variavel = _literal_;
+
+
+``` Java
+boolean result = true;
+char capitalC = 'C';
+byte b = 100;
+short s = 10000;
+int i = 100000; 
+```
+
+### Regras para nomenclatura de variáveis
+- Não use uma palavra reservada ou palavra-chave Java
+- Não use espaço no nome da variável
+- Use uma combinação de letras ou uma combinação de letras e números
+- Não é possível começar com um número
+- Os únicos símbolos permitidos são o sublinhado ( _ ) e o sinal de dólar ($)
+
+### Convenções para nomenclatura de variáveis
+- Use palavras completas em vez de abreviações criptografadas
+- Não use variáveis de uma única letra.
+- Se todas as variáveis tiverem uma única letra, o código poderá parecer muito confuso
+    - Uma exceção a esta convenção é para as variáveis de controle de loop, que são geralmente as letras i, j ou k
+- Se um nome de variável consistir em uma palavra, escreva essa palavra com todas as letras minúsculas
+- Se um nome de variável consistir em mais de uma palavra, use lowerCamelCase
+- Se uma variável for um valor constante, use todas as letras maiúsculas e separe-as com o sublinhado
+- Use nomes que expressem a finalidade da variável
+- No exemplo a seguir, PI é uma boa escolha para nomear esse número, pois permite que você lembre o que é a variável: 
+
+``` Java
+double PI = 3.14159;
+```
+
 
 ### Notas 
-```
-camelCase é a prática de sequenciarPalavrasCapitalizadas juntas sem
-espaços. Letras minúsculas concatenadas não capitalizam a palavra principal.
-```
-```
-Applets Java eram pequenos programas escritos na linguagem Java, embutidos diretamente em páginas da web e executados dentro do navegador do usuário, utilizando a Máquina Virtual Java (JVM)
-```
 
-```
-Um objeto em Java é uma instância concreta de uma classe. Ele representa um elemento do mundo real (como um "carro" ou "conta bancária") ou um conceito abstrato no código, possuindo atributos (dados/características) e métodos (comportamentos/ações) definidos por seu molde.
-```
+> camelCase é a prática de sequenciarPalavrasCapitalizadas juntas sem espaços. Letras minúsculas concatenadas não capitalizam a palavra principal.
+
+> Applets Java eram pequenos programas escritos na linguagem Java, embutidos diretamente em páginas da web e executados dentro do navegador do usuário, utilizando a Máquina Virtual Java (JVM)
+
+
+
+> Um objeto em Java é uma instância concreta de uma classe. Ele representa um elemento do mundo real (como um "carro" ou "conta bancária") ou um conceito abstrato no código, possuindo atributos (dados/características) e métodos (comportamentos/ações) definidos por seu molde.
+
 
 <b></b>
 
