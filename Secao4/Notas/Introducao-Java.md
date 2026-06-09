@@ -345,6 +345,44 @@ int i = 100000;
 double PI = 3.14159;
 ```
 
+### Incrementos e decrementos
+
+Incremento significa adicionar um e decremento significa remover um;
+
+São simbolizados como ++ e --;
+
+#### Notação pré-incremento: 
+
+> ++x 
+
+``` java
+int x = 3;
+++x; //x é igual a 4
+z = ++x; //x é igual 4, então z é igual a 5
+```
+#### Notação pós-incremento:
+
+> x++ 
+
+``` java
+int x = 3;
+x++; //x is equal to 4
+z = x++; //z is equal to 4, THEN x is equal to 5
+```
+
+
+### Truncamento e divisão por número inteiro
+
+A divisão de dois números inteiros sempre irá gerar um número inteiro, por exemplo: 
+> Se dividir 1/3 ele será avaliado como 0 em java devido a divisão de inteiros. 
+
+Para calcular um quociente sem truncamento, converta o dividendo para decimal.
+
+> 11 / 5,0 = 2,2 e, do mesmo modo, 11,0 / 5 = 2,2
+
+
+Slide 38
+
 
 ### Notas 
 
@@ -352,12 +390,11 @@ double PI = 3.14159;
 
 > Applets Java eram pequenos programas escritos na linguagem Java, embutidos diretamente em páginas da web e executados dentro do navegador do usuário, utilizando a Máquina Virtual Java (JVM)
 
-
-
 > Um objeto em Java é uma instância concreta de uma classe. Ele representa um elemento do mundo real (como um "carro" ou "conta bancária") ou um conceito abstrato no código, possuindo atributos (dados/características) e métodos (comportamentos/ações) definidos por seu molde.
 
-
-<b></b>
+> Truncamento é o conceito de remover a parte fracionária ou decimal de um
+número. Por exemplo: O truncamento de 7,8 produzirá o resultado 7, e o
+truncamento de -3,2 produzirá o resultado -3.
 
 
 ## Fontes
