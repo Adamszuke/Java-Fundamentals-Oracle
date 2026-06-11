@@ -22,3 +22,7 @@ A certificação pede os dois porque quer que você saiba que o default package 
 
 <hr>
 Explicação do Claude
+
+<hr>
+
+> Não entendi a diferença de uma transformação explicita para uma implicita

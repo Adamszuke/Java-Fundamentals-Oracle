@@ -1,25 +1,108 @@
 # JAVA
 
 ## Java JDK e Java JRE
-
-- O <b>Java Development Kit (JDK)</b> é o conjunto de ferramentas necessárias para realizar o desenvolvimento de aplicações Java. Contendo: 
-
-    - Java Runtime Environment (JRE); e Ferramentas de programação:
-    - javac: compilador;
-    - java: interpretador;
-    - appletviewer: visualizador de applets;
-    - javadoc: gerador de documentação;
-    - jar: empacotador de aplicações.
-
-- O <b>Java Runtime Environment (JRE)</b> é um pacote de software que fornece os requisitos mínimos para executar programas ou aplicativos desenvolvidos na linguagem Java. 
-
-    - <b>JVM (Java Virtual Machine)</b>: A Máquina Virtual Java. É o "coração" do JRE, responsável por ler e executar o código compilado em Java (bytecode), garantindo que o programa rode em qualquer sistema operacional.
-    - <b>Java Application Programming Interface (Java API)</b>: Coleções de códigos pré-escritos que os programas Java podem usar para realizar tarefas comuns (como manipulação de texto, rede ou interface gráfica).
-
+ 
+| | JRE | JDK |
+|-|-----|-----|
+| **Função** | Executa programas Java | Desenvolve e executa programas Java |
+| **Contém** | JVM + Java API | JRE + ferramentas de desenvolvimento |
+| **Quando usar** | Para rodar aplicações | Para programar em Java |
+ 
+**Ferramentas incluídas no JDK:**
+ 
+- `javac` — compilador (transforma `.java` em `.class`)
+- `java` — interpretador / executor
+- `javadoc` — gerador de documentação
+- `jar` — empacotador de aplicações
+- `appletviewer` — visualizador de applets *(obsoleto)*
+**Componentes do JRE:**
+ 
+- **JVM (Java Virtual Machine)** — lê e executa o bytecode, garantindo que o programa rode em qualquer sistema operacional
+- **Java API** — coleções de código pré-escrito para tarefas comuns (texto, rede, interface gráfica)
+> É necessário instalar um JRE específico para cada plataforma, pois a JVM embutida nele sabe como lidar com aquele ambiente.
+ 
+**Verificar se o Java está instalado:**
+ 
+```bash
+java -version   # Windows ou Linux: no terminal
+                # Mac: via Atualização de Software do menu Apple
 ```
-É necessário instalar um JRE específico de uma plataforma, pois junto com ele vem uma JVM que saberá lidar com essa plataforma e conseguirá executar aplicações Java naquele ambiente.
+ 
+---
+ 
+## IDE Java
+ 
+Uma **IDE (Integrated Development Environment)** é o ambiente onde você escreve, compila e executa seu código.
+ 
+A Oracle Academy usa o **Eclipse**, mas os conceitos se aplicam ao VS Code, IntelliJ e outros.
+ 
+### Componentes da IDE
+ 
+| Componente | Função |
+|------------|--------|
+| **Editor** | Área onde você digita o código-fonte |
+| **Views** | Subjanelas com informações do projeto (Package Explorer, Problems, Console) |
+| **Perspectiva** | Combinação de views + editor configurada para uma tarefa |
+ 
+### Hierarquia no Eclipse
+ 
 ```
-
+Workspace (espaço de trabalho)
+ └── Project (projeto — container dos arquivos)
+      └── Package (pacote — organiza classes relacionadas)
+           └── Classe.java
+```
+ 
+> Um **Workspace** é um conjunto de projetos. Um **Project** é como programadores organizam os arquivos Java. Um **Package** garante que arquivos relacionados se encontrem.
+ 
+---
+ 
+## Fluxo para Criar um Programa Java
+ 
+```
+1. Criar um Projeto
+2. Criar um Pacote (dentro da pasta src/ do projeto)
+3. Criar as Classes no pacote
+   └── Pelo menos uma deve conter o método main (Classe Driver)
+4. Compilar o código → gera arquivo .class (bytecode)
+5. Executar a classe Driver
+```
+ 
+> No Eclipse, a compilação acontece automaticamente ao salvar. Erros de sintaxe são destacados em tempo real.
+ 
+---
+ 
+## Comentários em Java
+ 
+Comentários são ignorados pelo compilador — servem para documentar o código.
+ 
+```java
+// Comentário de uma única linha
+ 
+/* Comentário em bloco
+   pode ocupar várias linhas */
+ 
+/**
+ * Comentário Javadoc — usado para gerar documentação oficial
+ * @param nome descrição do parâmetro
+ * @return descrição do retorno
+ */
+```
+ 
+---
+ 
+## Erros de Sintaxe
+ 
+O IDE destaca erros de sintaxe em tempo real. Os mais comuns:
+ 
+| Erro | Causa |
+|------|-------|
+| Falta de `;` | Toda instrução termina com ponto e vírgula |
+| `{` sem `}` correspondente | Todo bloco aberto precisa ser fechado |
+| Nome de classe diferente do arquivo | `public class Student` precisa estar em `Student.java` |
+| Tipo errado | Atribuir `String` a um `int`, por exemplo |
+ 
+---
 ### Classe 
 
 Uma classe em Java é um modelo que armazena atributos (características) e métodos (comportamentos). 
@@ -380,8 +463,52 @@ Para calcular um quociente sem truncamento, converta o dividendo para decimal.
 
 > 11 / 5,0 = 2,2 e, do mesmo modo, 11,0 / 5 = 2,2
 
+### Tipos e conversões 
 
-Slide 38
+Existem formas de impor uma fórmula para não truncar o valor. (O java não faz isso automaticamente)
+
+> Colocando a fórmula uma fração no fim da conta para que transforme um integer em um double.
+
+```java
+double volume = 3.14 * radius * radius * height * 1 / 3;
+```
+
+> Transforme um dos integers de literais em um double de
+literal de modo que o Java sempre use um double e um
+integer e converta implicitamente a resposta em um double,
+não truncado.
+
+```java
+double volume = 1 / 3.0 * 3.14 * radius * radius * height;
+```
+> Não entendi essa segunda forma.
+
+#### Usando Casting de tipo 
+
+Usando o casting de tipo você adiciona o tipo antes do valor entre parenteses.
+
+```java
+int number;
+number = (int)(Math.random() * 10);
+System.out.println("The random number is " + number + ".");
+```
+
+> Algumas alterações não serão possíveis, como por exemplo de converter uma char em uma string.
+
+
+Quando é feita uma transição de um tipo primitivo menor para um tipo primitivo maior a transição é feita implicitamente, e quando é feito de um tipo primitivo maior para um menor deve ser feito de forma explícita.
+
+> byte → short → int → long → float → double
+>
+> (menor)→(maior)
+
+### Casting Implícito vs Explícito
+
+Quando você vai de um tipo que "cabe menos" para um que "cabe mais", o Java faz sozinho — não tem risco de perder informação. Quando é o caminho contrário, você precisa avisar explicitamente que aceita o risco.
+
+
+
+
 
 
 ### Notas 
